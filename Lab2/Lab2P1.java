@@ -56,12 +56,17 @@ public class Lab2P1 {
                     else System.out.println("position = " + ans);
                     break;
                 case 6: /* add extractOddDigits() call */
+                    System.out.print("n : ");
+                    a = sc.nextInt();
+                    long c = extractOddDigits(a);
+                    System.out.println("oddDigits = " + c);
                     break;
                 case 7: System.out.println("Program terminating ….");
                 }
         }
         while (choice < 7);
     }
+    
     /* add method code here */
     public static void mulTest(){
         Random random = new Random();
@@ -111,10 +116,16 @@ public class Lab2P1 {
         return 0;
     }
     public static long extractOddDigits(long n){
-        String number = new String("");
-        while(n!=0){
-            if(n%2==1) number.append(valueOfString(n%2));
-            n=n/10;
+        long oddNum = 0;
+        long times = 1;
+        while(n > 0){
+            if((n % 10) % 2 == 1){ // odd number
+                oddNum = oddNum + times * (n % 10);
+                times = times * 10;
+            }
+            n = n/10;
         }
+        if(oddNum == 0 ) return -1;
+        return oddNum;
     }
 }
