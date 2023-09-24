@@ -15,6 +15,7 @@ public class Lab2P1 {
             System.out.println("5: position of a digit");
             System.out.println("6: extract all odd digits");
             System.out.println("7: quit");
+            System.out.print("Please key in your choice: ");
             choice = sc.nextInt();
             int a, b, ans;
             switch (choice) {

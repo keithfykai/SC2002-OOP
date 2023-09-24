@@ -2,13 +2,17 @@ package Lab3;
 import java.util.*;
 
 public class Plane {
-    private PlaneSeat seat[] = new PlaneSeat[12];
-    private int numEmptySeat = 12;
+    private PlaneSeat[] seats;
+    private int numEmptySeat;
     public static void main(String[] args){
     }
     // Constructor for the class plane
-    public Plane(){
-    
+    public Plane() {
+        seats = new PlaneSeat[12]; // Initialize the array with 12 seats
+        for (int i = 0; i < 12; i++) {
+            seats[i] = new PlaneSeat(i + 1); // Create a new PlaneSeat object for each seat
+        }
+        numEmptySeat = 12; // Initially, all seats are empty
     }
     // method to sort the seats according to ascending order of customerID. A copy of the original array is used for sorting instead of the original
     private PlaneSeat[] sortSeats(){
